@@ -16,6 +16,11 @@ Crear un documento de diseño cuando:
 - Se modifica la arquitectura.
 - Se requiere justificar una solución para revisión académica o técnica.
 
+## Diferencia con un execution plan
+
+- Un design doc explica una decisión: contexto, alternativas, decisión y consecuencias.
+- Un execution plan organiza el trabajo: objetivo, alcance, pasos, riesgos y criterios de aceptación.
+
 ## Formato sugerido
 
 Cada design doc debería incluir:
@@ -27,3 +32,13 @@ Cada design doc debería incluir:
 5. Consecuencias.
 6. Riesgos.
 7. Relación con otros documentos.
+
+## Convención de nombres
+
+Usar nombres breves y descriptivos, por ejemplo:
+
+```text
+decision-auth-strategy.md
+decision-module-architecture.md
+flow-user-registration.md
+```

@@ -16,7 +16,32 @@ Antes de realizar una tarea, el agente debe revisar:
 6. `docs/FRONTEND.md` si la tarea afecta frontend.
 7. `docs/SECURITY.md` si la tarea afecta datos, permisos, autenticación o exposición de información.
 8. `docs/RELIABILITY.md` si la tarea afecta errores, disponibilidad, logs o comportamiento ante fallos.
-9. `docs/exec-plans/active/` si existe un plan de ejecución vigente relacionado con la tarea.
+9. `docs/QUALITY_SCORE.md` si la tarea afecta evaluación, cierre de fase o entrega académica.
+10. `docs/exec-plans/active/` si existe un plan de ejecución vigente relacionado con la tarea.
+
+## Flujo de trabajo esperado
+
+Antes de modificar:
+
+- Identificar el objetivo de la tarea.
+- Revisar los documentos relacionados.
+- Identificar archivos probablemente afectados.
+- Confirmar si existe un execution plan activo aplicable.
+- Proponer actualización documental si falta contexto funcional, técnico o académico.
+
+Durante la tarea:
+
+- Mantener los cambios dentro del alcance solicitado.
+- Preferir soluciones simples, mantenibles y verificables.
+- Actualizar el execution plan activo si la tarea forma parte de uno.
+- Registrar deuda técnica si se detecta un problema que no se resolverá en la misma tarea.
+
+Al finalizar:
+
+- Verificar que el cambio solicitado fue realizado.
+- Actualizar documentación relacionada cuando corresponda.
+- Explicar brevemente qué cambió, por qué y cómo se validó.
+- Indicar riesgos, pendientes o decisiones relevantes.
 
 ## Reglas generales para agentes
 
@@ -28,6 +53,18 @@ Antes de realizar una tarea, el agente debe revisar:
 - Si se identifica deuda técnica, registrarla en `docs/exec-plans/tech-debt-tracker.md`.
 - Mantener la documentación clara, breve y accionable.
 - Priorizar soluciones simples, mantenibles y verificables.
+- No asumir reglas de negocio que no estén documentadas.
+
+## Uso de execution plans
+
+Crear o actualizar un execution plan cuando:
+
+- La tarea tenga varios pasos o afecte varios documentos o módulos.
+- Existan riesgos técnicos, académicos o de alcance.
+- Sea necesario dejar trazabilidad para revisión posterior.
+- La tarea implique una decisión relevante de arquitectura, producto o calidad.
+
+Un plan activo debe mantenerse en `docs/exec-plans/active/`. Cuando la tarea esté revisada y aceptada, puede moverse a `docs/exec-plans/completed/`.
 
 ## Criterio de finalización
 
@@ -38,6 +75,7 @@ Una tarea se considera terminada cuando:
 - No se rompieron reglas arquitectónicas.
 - Se dejó registro de decisiones relevantes.
 - Se explicó brevemente qué se cambió y por qué.
+- Se indicaron validaciones realizadas o limitaciones pendientes.
 
 ## Estilo de trabajo esperado
 

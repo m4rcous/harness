@@ -29,7 +29,10 @@ src/
 │       └── ui/
 ```
 
+Esta estructura es una guía, no una obligación rígida. En proyectos pequeños puede simplificarse siempre que se mantenga clara la separación entre reglas de negocio, coordinación técnica e interfaz.
+
 ## Capas
+
 ### Domain
 
 Contiene reglas de negocio, entidades, value objects y lógica central.
@@ -42,7 +45,7 @@ Contiene casos de uso y coordinación de operaciones.
 
 Puede depender de `domain`.
 
-### Infraestructure
+### Infrastructure
 
 Contiene detalles técnicos como APIs, base de datos, clientes HTTP, almacenamiento o servicios externos.
 
@@ -60,3 +63,34 @@ No debe contener lógica de negocio compleja.
 - `application` puede depender de `domain`.
 - `infrastructure` puede depender de contratos definidos por `application` o `domain`.
 - `domain` no debe depender de `ui`, `application` ni `infrastructure`.
+
+## Ejemplos de decisiones permitidas
+
+- Mantener validaciones de negocio en `domain`.
+- Mantener casos de uso en `application`.
+- Mantener llamadas HTTP, base de datos o almacenamiento en `infrastructure`.
+- Mantener formularios, pantallas y componentes visuales en `ui`.
+
+## Ejemplos de decisiones a evitar
+
+- Colocar reglas de negocio complejas dentro de componentes visuales.
+- Hacer que `domain` importe librerías de UI, base de datos o HTTP.
+- Duplicar la misma lógica en varios componentes.
+- Crear capas vacías que no aportan claridad al proyecto.
+
+## Cuándo simplificar
+
+En proyectos personales o académicos pequeños, se puede usar una estructura más simple si:
+
+- El alcance es reducido.
+- No hay múltiples módulos funcionales.
+- La separación de responsabilidades sigue siendo evidente.
+- La decisión queda documentada si afecta la arquitectura.
+
+## Regla crítica
+
+La lógica de negocio debe permanecer fuera de la interfaz visual.
+
+## Cambios arquitectónicos
+
+Todo cambio arquitectónico importante debe registrarse en un documento dentro de `docs/design-docs/`.

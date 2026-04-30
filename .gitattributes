@@ -1,0 +1,17 @@
+# Normalize line endings for the repository
+* text=auto
+
+# Documentation and config files should use LF
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Shell scripts should use LF
+*.sh text eol=lf
+
+# PowerShell scripts may use CRLF on Windows
+*.ps1 text eol=crlf
